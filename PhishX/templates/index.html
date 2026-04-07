@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PhishX — Email Phishing Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        input[type="text"] {
+            width: 400px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        .risk-high {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        .risk-medium {
+            color: #ff9900;
+            font-weight: bold;
+        }
+        .risk-low {
+            color: #009900;
+            font-weight: bold;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<div class="myfirst">
+    <h1>Hello, {{ name }}!</h1>
+</div>
+
+<h2>EMAIL PHISHING ANALYSER</h2>
+<p>Paste your email below for full analysis !!!</p>
+
+<form method="POST" action="/">
+    <input type="text" name="email" placeholder="Paste email here">
+    <input type="submit" value="Analyze">
+</form>
+
+{% if result %}
+    <h3>Analysis Report:</h3>
+    <p>Language Risk Score: {{ result.language_score }}</p>
+    <p>Total Link Risk Score: {{ result.total_link_score }}</p>
+    <p>Overall Risk Score: {{ result.total_score }}</p>
+    <p>Risk Level: 
+        <span class="{% if result.total_score >= 70 %}risk-high{% elif result.total_score >= 40 %}risk-medium{% else %}risk-low{% endif %}">
+            {{ result.risk_level }}
+        </span>
+    </p>
+
+    {% if result.links %}
+        <h4>Link Analysis:</h4>
+        <table>
+            <tr>
+                <th>Link</th>
+                <th>Domain</th>
+                <th>Risk Score</th>
+            </tr>
+            {% for link in result.links %}
+            <tr>
+                <td>{{ link.url }}</td>
+                <td>{{ link.domain }}</td>
+                <td>{{ link.risk_score }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endif %}
+
+</body>
+</html>
