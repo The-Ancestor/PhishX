@@ -2,8 +2,8 @@ PhishX
 
 PhishX is a web-based email phishing analyzer built with **Flask**. It analyzes email content and links to provide a **risk score**, helping you detect potential phishing attacks.
 
-Launched and deployed using Docker 
-💻 Live demo: https://phishx-cold-snow-8882.fly.dev/
+Live and running on AWS EC2
+💻 Live demo: http://34.228.41.8:5000/
 
 
 -- Features --
