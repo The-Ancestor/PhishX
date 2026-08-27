@@ -29,4 +29,32 @@ Live and running on AWS EC2
 
     Infrastructure: AWS EC2 (Ubuntu Linux)
 
-    WSGI / Web Server: Gunicorn 
+    WSGI / Web Server: Gunicorn
+
+    🚀 Quickstart (Local Development)
+Prerequisites
+
+    Python 3.10 or higher
+
+    pip package manager
+
+Installation
+
+    Clone the repository:
+
+git clone https://github.com/your-username/PhishX.git
+cd PhishX
+
+Create and activate a virtual environment:
+
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+Run the application:
+python app.py
+
+Navigate to [http://127.0.0.1:8080](http://127.0.0.1:8080) in your web browser.
