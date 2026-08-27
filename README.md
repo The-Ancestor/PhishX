@@ -20,3 +20,13 @@ Live and running on AWS EC2
   - `LOW RISK` — Safe
   - `MEDIUM RISK` — Suspicious
   - `HIGH RISK` — Likely phishing
+
+  - Architecture & Tech Stack
+
+    Backend Framework: Python 3.10+, Flask
+
+    Parsing & Heuristics: urllib.parse, Regular Expressions (Regex)
+
+    Infrastructure: AWS EC2 (Ubuntu Linux)
+
+    WSGI / Web Server: Gunicorn 
