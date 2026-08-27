@@ -42,17 +42,17 @@ Installation
 
     Clone the repository:
 
-git clone https://github.com/your-username/PhishX.git
-cd PhishX
+git clone https://github.com/The-Ancestor/PhishX.git <br>
+cd PhishX <br>
 
 Create and activate a virtual environment:
 
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+python3 -m venv venv <br>
+source venv/bin/activate  # On Windows: venv\Scripts\activate <br>
 
 Install dependencies:
 
-pip install -r requirements.txt
+pip install -r requirements.txt <br>
 
 Run the application:
 python app.py
